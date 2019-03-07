@@ -1,0 +1,83 @@
+ @import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+
+.content__container__main {
+  width: 100%;
+  padding-top: 100px;
+  padding-left:30px;
+  display: grid;
+  grid-template-columns: auto 1000px auto;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    'spaceHeaderLeft header spaceHeaderRight'
+    'spaceContentLeft content spaceRight';
+}
+.content__container__main__header {
+  grid-area: header;
+  width: 100%;
+  font-size: 2.5em;
+  padding-bottom: 8px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+  border-bottom: 1px solid transparent;
+  border-color: rgba(0, 0, 0, 0.14);
+
+}
+.content__container__main__products {
+  display: grid;
+  grid-area: content;
+  grid-template-columns: repeat(3, 331.5px);
+  grid-auto-rows: 300px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.content__container__main__products__item {
+  background-color: white;
+  cursor: pointer;
+}
+
+.content__container__main__products__item__image {
+  min-height: 250px;
+  background-image: url('../../assets/loader.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px 50px;
+}
+
+.content__container__main__products__item__image > img{
+  height: 250px;
+}
+
+
+.content__container__main__products__item__name {
+  font-size: 1em;
+  font-weight: 300;
+  width: 300px;
+  padding-top: 8px;
+  padding-left: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.content__container__main__products__item__price-circle {
+  position: absolute;
+  margin-top: -245px;
+  margin-left: 8px;
+  z-index: 2;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 82, 82, 0.87);
+  -moz-border-radius: 70px;
+  -webkit-border-radius: 70px;
+  border-radius: 70px;
+}
+.content__container__main__products__item__price {
+  font-size: 1em;
+  font-weight: 500;
+  color: white;
+  margin-top: 20px;
+  margin-left: 11px;
+}
+
+

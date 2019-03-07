@@ -1,0 +1,261 @@
+ @import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+html{
+    background: linear-gradient( #E9E4F0,#D3CCE3);
+  }
+
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+.main_wrapper {
+  display: grid;
+  grid-template-columns: auto 500px auto;
+  grid-template-rows: auto 450px auto;
+  grid-template-areas:
+    'top top top'
+    'midLeft card midRight'
+    'bottom bottom bottom';
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient( #E9E4F0,#D3CCE3);;
+}
+
+.main_wrapper__content {
+  grid-area: card;
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 100px .3fr .9fr 90px;
+  grid-template-areas:
+    'header header header'
+    'username username username'
+    'password password password'
+    'buttons buttons buttons'
+    'buttons1 buttons1 buttons1'
+    'action action action';
+}
+
+.main_wrapper__content__header {
+  grid-area: header;
+  height:22px;
+  color:#ffff;
+  background-color: #FF771C;
+  font-size: 25px;
+  margin-bottom: 40px;
+  padding: 25px 25px;
+  font-family: 'Titillium Web', sans-serif;
+}
+.main_wrapper__content__username {
+  grid-area: username;
+  padding: 0px 25px 0px 25px;
+}
+.main_wrapper__content__username__input {
+  width: 100%;
+  font: 22px;
+}
+.main_wrapper__content__password {
+  grid-area: password;
+  padding: 35px 25px;
+}
+.main_wrapper__content___password__input {
+  width: 100%;
+  font: 22px;
+}
+
+.main_wrapper__content__buttons {
+  grid-area: buttons;
+}
+
+.main_wrapper__content__buttons1 {
+  grid-area:buttons1;
+}
+
+
+/* Input Material Design */
+
+.group {
+  position: relative;
+  width: 100%;
+}
+input {
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+  width: 429px;
+  border: none;
+  border-bottom: 1px solid #757575;
+  font-family: 'Titillium Web', sans-serif;
+
+}
+input:focus {
+  outline: none;
+}
+
+/* LABEL ======================================= */
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+/* active state */
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #5264ae;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+}
+.bar:before,
+.bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264ae;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+/* Material Button Design */
+.btn {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 10px;
+  font-size: 18px;
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+
+  background-color: #2ecc71;
+  color: #ecf0f1;
+
+  transition: background-color 0.3s;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #27ae60;
+}
+
+.btn > * {
+  position: relative;
+}
+
+.btn span {
+  display: block;
+  padding: 12px 24px;
+}
+
+.btn:before {
+  content: '';
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 0;
+  padding-top: 0;
+
+  border-radius: 100%;
+
+  background-color: rgba(236, 240, 241, 0.3);
+
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+  transition: width 0.2s ease-out, padding-top 0.2s ease-out;
+}

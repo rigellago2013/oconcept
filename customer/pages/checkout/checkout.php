@@ -1,0 +1,3 @@
+<b>
+    Checkout
+</b>

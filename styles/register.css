@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+  html{
+    background: linear-gradient( #E9E4F0,#D3CCE3);
+  }
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+
+}
+
+.main_wrapper {
+  display: grid;
+  grid-template-columns: auto 500px auto;
+  grid-template-rows: auto 450px auto;
+  grid-template-areas:
+    'top top top'
+    'midLeft card midRight'
+    'bottom bottom bottom';
+  width: 100vw;
+  height: 70vh;
+  background: linear-gradient( #D3CCE3 , #E9E4F0);
+}
+
+.main_wrapper__content {
+  grid-area: card;
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  display: grid;
+  grid-template-columns: auto auto auto;
+  height:590px;
+  grid-template-rows: 100px .3fr .9fr 90px;
+  grid-template-areas:
+
+    'header header header'
+    'username username username'
+    'password password password'
+    'email email email'
+    'contact contact contact'
+    'address address address'
+    'type type type'
+    'number number number'
+    'buttons buttons buttons'
+    'action action action';
+}
+
+.main_wrapper__content__header {
+  grid-area: header;
+  height:25px;
+  font-size: 28px;
+  background-color: #FF771C;
+  color:#ffff;
+  margin-bottom: 90px;
+  padding: 25px 30px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+/*Para sa Password */
+.main_wrapper__content__username {
+  grid-area: username;
+  padding: 0px 25px 0px 25px;
+}
+
+.main_wrapper__content__username__input {
+  width: 100%;
+  font: 22px;
+}
+
+.main_wrapper__content__password {
+  grid-area: password;
+  padding: 35px 25px;
+}
+.main_wrapper__content___password__input {
+  width: 100%;
+  font: 22px;
+}
+
+.main_wrapper__content__email {
+  grid-area: email;
+  padding: 0px 25px 40px 20px;
+}
+.main_wrapper__content___email__input {
+  width: 100%;
+  font: 22px;
+}
+
+.main_wrapper__content__contact {
+  grid-area: contact;
+  padding: 0px 25px 40px 20px;
+}
+.main_wrapper__content___contact__input {
+  width: 100%;
+  font: 22px;
+}
+
+.main_wrapper__content__address {
+  grid-area: address;
+  padding: 0px 25px 30px 20px;
+}
+.main_wrapper__content___address__input {
+  width: 100%;
+  font: 22px;
+}
+
+.main_wrapper__content__type {
+  grid-area: type;
+  padding: 0px 25px 30px 20px;
+}
+.main_wrapper__content___type__select {
+  width: 100%;
+  font: 22px;
+
+
+}
+
+
+.main_wrapper__content__buttons {
+  grid-area: buttons;
+  padding-bottom:30px;
+}
+
+/* Input Material Design */
+
+.group {
+  position: relative;
+  width: 100%;
+}
+
+input {
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+  width: 429px;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+input:focus {
+  outline: none;
+}
+
+/*Select Material Design*/
+select {
+  font-size: 18px;
+  padding: 10px;
+  padding-bottom: 20px;
+  display: block;
+  width: 429px;
+  border: none;
+  border-bottom: 1px solid #757575;
+  font-family: 'Titillium Web', sans-serif;
+}
+select:focus {
+  outline: none;
+}
+
+/* LABEL ======================================= */
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+h4{
+   font-family: 'Titillium Web', sans-serif;
+}
+
+/* active state */
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #5264ae;
+}
+
+/* select active state */
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #5264ae;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+}
+.bar:before,
+.bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264ae;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+  width: 50%;
+}
+
+/* select active state */
+select:focus ~ .bar:before,
+select:focus ~ .bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* active state */
+select:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+/* Material Button Design */
+.btn {
+  position: relative;
+  width: 100%;
+  display: block;
+  padding: 10px;
+  font-size: 18px;
+  overflow: hidden;
+  font-family: 'Titillium Web', sans-serif;
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  margin-top:-2px;
+
+
+  background-color:  #2ecc71;
+  color: #ecf0f1;
+
+  transition: background-color 0.3s;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #27ae60;
+}
+
+.btn > * {
+  position: relative;
+}
+
+.btn span {
+  display: block;
+  padding: 12px 24px;
+}
+
+.btn:before {
+  content: '';
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 0;
+  padding-top: 0;
+
+  border-radius: 100%;
+
+  background-color: rgba(236, 240, 241, 0.3);
+
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+
+  transition: width 0.2s ease-out, padding-top 0.2s ease-out;
+}

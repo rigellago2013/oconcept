@@ -1,0 +1,84 @@
+.content__container__main {
+  background-color: #f5f5f5;
+  width: 100%;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: auto 1000px auto;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    'spaceHeaderLeft header spaceHeaderRight'
+    'spaceContentLeft content spaceRight';
+}
+.content__container__main__header {
+  grid-area: header;
+  width: 100%;
+  font-size: 2.5em;
+  padding-bottom: 8px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+  border-bottom: 1px solid transparent;
+  border-color: rgba(0, 0, 0, 0.14);
+}
+.content__container__main__product {
+  display: grid;
+  grid-area: content;
+  grid-template-columns: 330px 1fr;
+  grid-template-rows: repeat(3, 250px);
+  grid-column-gap: 10px;
+  grid-row-gap: 0px;
+  grid-template-areas: 'image image' 'name name' 'description description' 'deleteButton editButton';
+}
+
+.materialButton {
+  height: 65px;
+  width: 100%;
+  color: white;
+  font-size: 1.2em;
+  background-color: rgba(255, 82, 82, 0.87);
+  border: none;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.content__container__main__editButton {
+  grid-area: editButton;
+}
+
+
+.content__container__main__deleteButton {
+  grid-area: deleteButton;
+}
+
+.content__container__main__product__image {
+  height: 250px;
+  grid-area: image;
+  background-image: url('../../assets/loader.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px 50px;
+}
+.content__container__main__product__image > img {
+  max-height: 250px;
+}
+
+/* Name */
+.content__container__main__product__description {
+  padding-top: 30px;
+  grid-area: description;
+}
+.content__container__main__product__description__title {
+  font-size: 2em;
+}
+
+.content__container__main__product__description {
+  padding-top: 30px;
+  grid-area: description;
+}
+.content__container__main__product__description__title {
+  font-size: 2em;
+}
+.content__container__main__product__description__textarea {
+  width: 100%;
+  font-size: 1.2em;
+}

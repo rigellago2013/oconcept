@@ -1,0 +1,124 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto','Helvetica Neue',sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
+/* Header */
+nav {
+  width: 100%;
+  height: 63px;
+  display: grid;
+  grid-template-rows: 2fr;
+  grid-template-columns: 1fr 0.1fr auto;
+  transition: box-shadow 200ms ease-in-out;
+  border-bottom: 1px solid transparent;
+  border-color: rgba(0, 0, 0, 0.14);
+  background-color: #E37B40;
+  position: fixed;
+  position: absolute;
+}
+
+.nav-items {
+  display: grid;
+  padding: 20px;
+  grid-template-rows: 1fr;
+  grid-template-columns: 100px 100px 100px 100px -90px 20px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 'home test'
+}
+
+nav .logo {
+  padding: 18px;
+  vertical-align: center;
+  font-size: 1.26em;
+  color:#ffff;
+
+}
+
+.nav-items div {
+  padding: 0px 14px 90px;
+  font-weight: 500;
+  text-align: center;
+
+  
+}
+.nav-items > div > a {
+    cursor: pointer;
+
+}
+
+.nav-items div:hover {
+  font-weight: bold;
+}
+
+.nav-items div a {
+  text-decoration: none;
+  color:#ffff;
+
+}
+
+.nav-items div a p {
+  text-decoration: none;
+  color:#ffff;
+  font-family: 'Titillium Web', sans-serif;
+ 
+}
+
+/* Content */
+.content {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto;
+}
+
+/* Sidebar */
+.content__container__sidebar {
+  width: 300px;
+  /* display: grid; */
+  display: none;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr auto;
+  border-left: 1px solid transparent;
+  border-color: rgba(0, 0, 0, 0.14);
+  transition: all 1s;
+}
+/* Sidebar Footer */
+.content__container__sidebar__footer {
+  padding: 20px;
+  text-align: center;
+  font-weight: 500;
+  cursor: pointer;
+  border-top: 1px solid transparent;
+  border-color: rgba(0, 0, 0, 0.14);
+}
+.content__container__sidebar__footer:hover {
+  font-weight: bold;
+}
+/* Sidebar Item */
+.content__container__sidebar__item {
+  margin: 8px;
+  padding: 20px;
+  border-bottom: 1px solid transparent;
+  border-color: rgba(0, 0, 0, 0.14);
+}
+/* Sidebar Item Name */
+.content__container__sidebar__item--name {
+}
+/* Sidebar Item Amount */
+.content__container__sidebar__item--amount {
+  font-size: 12px;
+}
+/* Sidebar Item Action */
+.content__container__sidebar__item--action {
+}
+.content__container {
+}
